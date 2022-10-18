@@ -4,24 +4,24 @@ export class BaseRepository<T> implements IBaseRepository<T>{
     protected _connectionString: string;
     protected _tableName: string;
 
-    constructor(tableName: string){
+    constructor(entity: T){
         this._connectionString = "";
-        this._tableName = tableName;
+        this._tableName = typeof entity;
     }
-    get(): T[] {
+    get(): Promise<T[]> {
         throw new Error("Method not implemented.");
     }
-    getOne(): T {
+    getOne(): Promise<T> {
         throw new Error("Method not implemented.");
     }
-    create(entity: T): Number {
+    create(entity: T): Promise<Number> {
         throw new Error("Method not implemented.");
     }
-    update(entityId: Number, entity: T): Number {
+    update(entityId: Number, entity: T): Promise<Number> {
         throw new Error("Method not implemented.");
     }
-    delete(entityId: Number): Number {
+    delete(entityId: Number): Promise<Number> {
         throw new Error("Method not implemented.");
     }
-
+   
 }
