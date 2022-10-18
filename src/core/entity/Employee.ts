@@ -1,12 +1,12 @@
 import { BaseEntity } from "./BaseEntity";
 
-export class Employee extends BaseEntity{
-    employeeId!: Number;
-    employeeCode!: String;
+export interface Employee extends BaseEntity{
+    employeeId: Number;
+    employeeCode: String;
     firstName?: String;
     lastName?: String;
-    employeeName!: String;
-    dateOfBirth!: Date;
+    employeeName: String;
+    dateOfBirth: Date;
     genderType?: Date;
     genderName?: Date;
     phoneNumber?: Date;
